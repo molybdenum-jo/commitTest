@@ -2,35 +2,34 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title('Uber pickups in NYC')
+st.title('도서 추천시스템')
+st.title('도서평점 예측을 통한 도서 추천시스템')
+st.sidebar.title('고객분석
 
-DATE_COLUMN = 'date/time'
-DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
-            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+latest_iteration = st.empty()
+bar = st.progress(0)
+for i in range(100):
+    # Update the progress bar with each iteration.
+    latest_iteration.text(f'Iteration {i+1}')
+    bar.progress(i + 1)
+    time.sleep(0.01)
+                 
+st.write("""
+## 고객 분석
+1. 나이별 평점 비교
+2. 지역별 평점 비교
 
-@st.cache_data
-def load_data(nrows):
-    data = pd.read_csv(DATA_URL, nrows=nrows)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
-    return data
+## 출판사 분석
+1. 책 타이틀
+2. 작가별
+3. 도서출판일
+4. 출판사별
 
-data_load_state = st.text('Loading data...')
-data = load_data(10000)
-data_load_state.text("Done! (using st.cache_data)")
-
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
-    st.write(data)
-
-st.subheader('Number of pickups by hour')
-hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
-st.bar_chart(hist_values)
-
-# Some number in the range 0-23
-hour_to_filter = st.slider('hour', 0, 23, 17)
-filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
-
-st.subheader('Map of all pickups at %s:00' % hour_to_filter)
-st.map(filtered_data)
+## 도서평점예측을 통한 도서추천시스템
+1. 협업필터링 기반의 추천시스템
+2. 콘텐츠 기반의 추천시스템
+3. 행렬 인수분해 기반의 추천시스템
+4. 딥 러닝 모델 기반의 추천시스템
+5. 앙상블 기법을 사용한 추천시스템
+6. 하이퍼파라미터 최적화를 통한 추천시스템
+""")
