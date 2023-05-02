@@ -52,4 +52,4 @@ st.write("""
 4. 학술 정보 제공: 학술 분야에서도 도서 추천 알고리즘을 활용하여, 논문, 연구 보고서 등의 정보를 추천할 수 있습니다. 이를 활용하여 연구자들이 더 다양한 정보를 수집하고, 연구의 질을 향상시킬 수 있습니다.
 """)
 
-st.set_page_config(page_title="고객분석", page_icon:"bi bi-file-earmark-text")
+st.set_page_config(page_title="My App", page_icon=":books:")
