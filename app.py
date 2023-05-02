@@ -4,7 +4,6 @@ import numpy as np
 
 st.title('도서 추천시스템')
 st.title('도서평점 예측을 통한 도서 추천시스템')
-st.sidebar.title('고객분석
 
 latest_iteration = st.empty()
 bar = st.progress(0)
