@@ -51,21 +51,23 @@ st.write("""
 3. 출판사에서의 마케팅: 도서 추천 알고리즘을 사용하여, 특정 장르나 특정 저자의 도서에 대한 사용자들의 선호도를 파악할 수 있습니다. 이를 활용하여 출판사에서는 마케팅 활동을 전개할 수 있습니다.
 4. 학술 정보 제공: 학술 분야에서도 도서 추천 알고리즘을 활용하여, 논문, 연구 보고서 등의 정보를 추천할 수 있습니다. 이를 활용하여 연구자들이 더 다양한 정보를 수집하고, 연구의 질을 향상시킬 수 있습니다.
 """)
-# 사이드바 메뉴 생성
-menu = ["Home", "About", "Contact"]
 
-# 페이지 선택
-choice = st.sidebar.selectbox("Select an option", menu)
 
-# 각 페이지 내용 작성
-if choice == "Home":
-    st.title("Home Page")
-    st.write("This is the Home page.")
+# 페이지 레이아웃 구성
+col1, col2, col3 = st.beta_columns(3)
 
-elif choice == "About":
-    st.title("About Page")
-    st.write("This is the About page.")
+# 첫 번째 컬럼에 제목과 내용 출력
+with col1:
+    st.header('첫 번째 페이지')
+    st.write('첫 번째 페이지의 내용입니다.')
 
-else:
-    st.title("Contact Page")
-    st.write("This is the Contact page.")
+# 두 번째 컬럼에 제목과 내용 출력
+with col2:
+    st.header('두 번째 페이지')
+    st.write('두 번째 페이지의 내용입니다.')
+
+# 세 번째 컬럼에 제목과 내용 출력
+with col3:
+    st.header('세 번째 페이지')
+    st.write('세 번째 페이지의 내용입니다.')
+
