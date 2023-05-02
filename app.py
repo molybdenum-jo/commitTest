@@ -25,7 +25,7 @@ df = pd.DataFrame({
            '발표 모델 개발 및 개선','EDA 인사이트 데이터 전처리']
     }, index=pd.Index(data=['김상민','조수연','강다현','사공도경'], name='이름'))
 
-print(df.index.name)  # 출력 결과: 이름
+st.dataframe(df)
 
 
 
