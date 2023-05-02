@@ -15,7 +15,17 @@ st.write("""
 - EDA
 - NOTION
 - DASHBOARD
+
+## Team structure
+df = pd.DataFrame({
+'역할':['공공 데이터 적용  
+최종 보고서 작성
+ppt정리','모델 개발 및 예측 점수 선별 
+대시 보드 구축 및 배포','발표
+모델 개발 및 개선','EDA 인사이트
+데이터 전처리']}, index=pd.Index(data=['김상민','조수연','강다현','사공도경'], name='이름'))
 """)
+
 
 st.write("""
 ## 고객 분석
