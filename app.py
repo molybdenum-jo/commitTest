@@ -4,14 +4,6 @@ import numpy as np
 
 st.title('도서 추천시스템')
 st.title('도서평점 예측을 통한 도서 추천시스템')
-
-latest_iteration = st.empty()
-bar = st.progress(0)
-for i in range(100):
-    # Update the progress bar with each iteration.
-    latest_iteration.text(f'Iteration {i+1}')
-    bar.progress(i + 1)
-    time.sleep(0.01)
                  
 st.write("""
 ## 고객 분석
