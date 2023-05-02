@@ -20,10 +20,10 @@ st.write("""
 """)
 
 df = pd.DataFrame({
-    '역할':['공공 데이터 적용|n최종 보고서 작성|nppt정리',
-           '모델 개발 및 예측 점수 선별|n대시 보드 구축 및 배포',
-           '발표|n모델 개발 및 개선'
-           ,'EDA 인사이트|n데이터 전처리']
+    '역할':['공공 데이터 적용\n최종 보고서 작성\nppt정리',
+           '모델 개발 및 예측 점수 선별\n대시 보드 구축 및 배포',
+           '발표\n모델 개발 및 개선'
+           ,'EDA 인사이트\n데이터 전처리']
     }, index=pd.Index(data=['김상민','조수연','강다현','사공도경'], name='이름'))
 
 st.dataframe(df)
@@ -52,19 +52,15 @@ st.write("""
 4. 학술 정보 제공: 학술 분야에서도 도서 추천 알고리즘을 활용하여, 논문, 연구 보고서 등의 정보를 추천할 수 있습니다. 이를 활용하여 연구자들이 더 다양한 정보를 수집하고, 연구의 질을 향상시킬 수 있습니다.
 """)
 
+st.write(""" 
+### Dataset
+""")
 
-# 사이드바에 페이지 목록 표시
-st.sidebar.title("페이지 목록")
-page = st.sidebar.radio("이동할 페이지 선택", ["Home", "About", "Contact"])
+uploaded_file = st.file_uploader("Choose a file")
 
-# 페이지 별 내용
-if page == "Home":
-    st.title("Home 페이지")
-    st.write("이곳은 Home 페이지입니다.")
-elif page == "About":
-    st.title("About 페이지")
-    st.write("이곳은 About 페이지입니다.")
-elif page == "Contact":
-    st.title("Contact 페이지")
-    st.write("이곳은 Contact 페이지입니다.")
+if uploaded_file is not None:
+    # 선택한 파일의 내용을 읽어옴
+    file_contents = uploaded_file.read()
+    # 파일 내용 출력
+    st.write(file_contents)
 
