@@ -53,21 +53,18 @@ st.write("""
 """)
 
 
-# 페이지 레이아웃 구성
-col1, col2, col3 = st.beta_columns(3)
+# 사이드바에 페이지 목록 표시
+st.sidebar.title("페이지 목록")
+page = st.sidebar.radio("이동할 페이지 선택", ["Home", "About", "Contact"])
 
-# 첫 번째 컬럼에 제목과 내용 출력
-with col1:
-    st.header('첫 번째 페이지')
-    st.write('첫 번째 페이지의 내용입니다.')
-
-# 두 번째 컬럼에 제목과 내용 출력
-with col2:
-    st.header('두 번째 페이지')
-    st.write('두 번째 페이지의 내용입니다.')
-
-# 세 번째 컬럼에 제목과 내용 출력
-with col3:
-    st.header('세 번째 페이지')
-    st.write('세 번째 페이지의 내용입니다.')
+# 페이지 별 내용
+if page == "Home":
+    st.title("Home 페이지")
+    st.write("이곳은 Home 페이지입니다.")
+elif page == "About":
+    st.title("About 페이지")
+    st.write("이곳은 About 페이지입니다.")
+elif page == "Contact":
+    st.title("Contact 페이지")
+    st.write("이곳은 Contact 페이지입니다.")
 
