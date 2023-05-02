@@ -3,8 +3,15 @@ import pandas as pd
 import numpy as np
 
 st.title('도서 추천시스템')
-st.title('도서평점 예측을 통한 도서 추천시스템')
-                 
+st.header('도서 평점 예측을 통한 도서 추천 시스템')
+with st.sidebar:
+  menu = option_menu("고객분석", ["나이별 평점 비교", " 지역별 평점비교"],
+                     icons=['bi bi-1-square', 'bi bi-2-square'],
+                     menu_icon="bi bi-file-earmark-text", default_index=0)
+st.subheader('AI school 8기 Final_Project')
+
+
+
 st.write("""
 ## 고객 분석
 1. 나이별 평점 비교
