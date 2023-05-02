@@ -63,4 +63,12 @@ if uploaded_file is not None:
     file_contents = uploaded_file.read()
     # 파일 내용 출력
     st.write(file_contents)
+    
+    file_contents = uploaded_file.read()
+    # 파일 내용 출력
+    st.write(file_contents)
+    
+    file_contents = uploaded_file.read()
+    # 파일 내용 출력
+    st.write(file_contents)
 
