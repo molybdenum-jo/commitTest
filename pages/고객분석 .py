@@ -78,15 +78,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # 데이터 불러오기
-df_country = pd.read_csv('data/Country.csv')
-
-# 히스토그램 그리기
-fig3, ax = sns.barplots(figsize=(10, 6))
-ax.barplot(data=df_country, x=countriestop10.index, y=countriestop10.Country)
-ax.set_title('Number of ratings by country') # 그래프 제목 설정
-
-# 그래프 표시하기
-st.pyplot(fig3)
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.barplot(data=df_country, x='Country', y='Number of ratings', ax=ax)
+ax.set_title('Number of ratings by country')
+ax.set_xlabel('Country')
+ax.set_ylabel('Number of ratings')
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
