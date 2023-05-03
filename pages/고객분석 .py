@@ -7,12 +7,28 @@ import plotly.express as px
 
 st.header('고객분석')
 st.sidebar.title('고객분석')
+
+
 st.sidebar.markdown("""
     ## 고객 분석
     - [part 1. 나이별 분석](#part-1-age-analysis)
     - [part 2. 지역별 분석](#part-2-location-analysis)
     - [part 3. 유저별 분석](#part-3-user-analysis)
 """)
+
+
+st.write("""
+### Dataset
+""")
+df_train = pd.read_csv('data/AGE.csv')
+st.dataframe(df_train)
+
+
+
+js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
+
+    
+st.markdown("<h3 id='part-1-age-analysis'>Part 1. 나이별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
 ### DATA 전처리
@@ -24,19 +40,6 @@ st.write("""
 -> 모델 예측점수 결과가 가장 좋았던 의견 1)을 사용하기로 함
 
 """)
-
-st.write("""
-### Dataset
-""")
-df_train = pd.read_csv('data/AGE.csv')
-st.dataframe(df_train)
-
-
-js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
-
-    
-st.markdown("<h3 id='part-1-age-analysis'>Part 1. 나이별 분석</h3>", unsafe_allow_html=True)
-
 
 
 import streamlit as st
