@@ -63,10 +63,9 @@ plt.ylabel('Count') # y축 레이블 설정
 # 그래프 표시하기
 st.pyplot(fig4)
 
-st.write("""
-   
-     
-""")
+st.write('')
+st.write('')
+st.write('')
 
 js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
   
@@ -101,11 +100,8 @@ st.write("""
 - MYS = 말레이시아
 """)
 
-st.write("""
-   
-     
-""")
-
+st.write('')
+st.write('')
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -138,10 +134,9 @@ st.write("""
 - BRN = 브루나이
 """)
 
-st.write("""
-   
-     
-""")
+st.write('')
+st.write('')
+
 
 import streamlit as st
 import pandas as pd
@@ -158,12 +153,9 @@ ax.set_title('Average rating by country') # 그래프 제목 설정
 
 # 그래프 표시하기
 st.pyplot(fig3)
-st.write("""
-   
-     
-        
-           
-""")
+st.write('')
+st.write('')
+st.write('')
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
@@ -173,10 +165,9 @@ st.write("""
 ##### 도서별 이용횟수와 평균 평점
 도서의 정보 및 이용 횟수와 평균 평점 추가한 데이터셋 생성
 """)
-st.write("""
-  
-  
-""")
+st.write('')
+st.write('')
+
 st.write("""
 ##### ✔ 유저들이 가장 많이 이용한 상위 10개 도서
 
