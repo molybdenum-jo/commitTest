@@ -26,6 +26,7 @@ st.write("""
 df_train = pd.read_csv('data/AGE.csv')
 st.dataframe(df_train)
 
+st.sidebar.markdown("[Part 1. 나이별 분석](#part-1-age-analysis)")
 st.write("""
 ### Part 1. 나이별 분석
 """)
@@ -56,19 +57,3 @@ st.markdown("<h1 id='part-2-location-analysis'>Part 2. 지역별 분석s</h1>", 
 ### Part 3. 유저별 분석
 st.markdown("<h1 id='part-3-user-analysis'>Part 3. 유저별 분석</h1>", unsafe_allow_html=True)
 
-# 소제목 클릭 시 해당 위치로 이동
-if st.sidebar.button("Part 1. 나이별 분석"):
-    js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
-    html = '<script>{}</script>'.format(js)
-    st.markdown(html, unsafe_allow_html=True)
-
-if st.sidebar.button("Part 2. 지역별 분석"):
-    js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
-    html = '<script>{}</script>'.format(js)
-    st.markdown(html, unsafe_allow_html=True)
-    
-if st.sidebar.button("Part 3. 유저별 분석"):
-    js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
-    html = '<script>{}</script>'.format(js)
-    st.markdown(html, unsafe_allow_html=True)
-    
