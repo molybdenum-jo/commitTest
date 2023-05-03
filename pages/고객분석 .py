@@ -7,7 +7,7 @@ import plotly.express as px
 
 st.header('고객분석')
 st.sidebar.title('고객분석')
-category = st.sidebar.selectbox(
+category = st.sidebar.radio(
     'Select a category:',
     ['Category 1', 'Category 2', 'Category 3']
 )
