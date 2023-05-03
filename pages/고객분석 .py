@@ -30,7 +30,7 @@ st.dataframe(df_train)
 st.write(""" 
 ### part 1. 나이별 분석
 """)
-<div id='part-1-나이별-분석'></div> # 제목 위 위치에 해당하는 div 태그
+st.markdown("# part 1. 나이별 분석")
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
