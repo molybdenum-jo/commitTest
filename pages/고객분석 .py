@@ -32,7 +32,7 @@ js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTo
 st.markdown("<h3 id='part-1-age-analysis'>Part 1. 나이별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
-### DATA 전처리
+#### DATA 전처리
 
 - 의견1) 0세는 상위1% 값이 15세로 대체. 모두 하위 4%와 3% 구간 사이에서 비교적 급격한 나이 변화가 일어났으므로 급격한 나이변화가 일어나는 구간부터는 모두 이상치로 판단, 따라서 하위4% 이하인 80세 이상은 모두 80세로 대체
 - 의견2) 상위 1%인 0-15세를 모두 15세로 대체하며, 하위1%에 해당하는 67세-244세는 모두 67세로 대체
@@ -61,9 +61,14 @@ ax.set_ylabel('Count') # y축 레이블 설정
 st.pyplot(fig4)
 
 
-### Part 2. 지역별 분석
-st.markdown("<h1 id='part-2-location-analysis'>Part 2. 지역별 분석s</h1>", unsafe_allow_html=True)
+js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
 
-### Part 3. 유저별 분석
-st.markdown("<h1 id='part-3-user-analysis'>Part 3. 유저별 분석</h1>", unsafe_allow_html=True)
+    
+st.markdown("<h3 id='part-2-location-analysis'>Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
 
+
+
+js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
+
+    
+st.markdown("<h3 id='part-3-user-analysi'>Part 2. 유저별 분석</h3>", unsafe_allow_html=True)
