@@ -65,7 +65,8 @@ st.pyplot(fig1)
 
 st.write("""
 ##### ✔ 상위 10위 도서별 평균 평점
-
+- The Vampire Lestat (Vampire Chronicles, Book II)이 8.6점으로 가장 높은 평점을 보인다.
+- 그 뒤로 The Secret Life of Bees, A Painted House, We Were the Mulvaneys 등이 7점이상의 높은 평점을 보였다.
 """)
 import streamlit as st
 import pandas as pd
