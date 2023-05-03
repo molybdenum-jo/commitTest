@@ -38,7 +38,7 @@ st.write("""
 """)
 
 st.write("""
-##### ✔ 상위 10위 도서별 평균 평점
+##### ✔ 상위 10위 도서별 평점수
 
 """)
 import streamlit as st
@@ -51,7 +51,7 @@ import seaborn as sns
 df_book = pd.read_csv('data/popbooks.csv')
 
 fig1, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='avg_rating', y='Book-Title', data=df_book,palette='Set1')
+sns.barplot(x='N_rating', y='Book-Title', data=df_book,palette='Set1')
 
 # x축 레이블 90도 회전
 ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
@@ -63,7 +63,7 @@ ax.set_title('Top10 Books most read by users', fontsize=16)
 st.pyplot(fig1)
 
 st.write("""
-##### ✔ 상위 10위 도서별 평점수
+##### ✔ 상위 10위 도서별 평균 평점
 
 """)
 import streamlit as st
@@ -73,10 +73,10 @@ import seaborn as sns
 
 # 데이터 불러오기
 
-df_countbook = pd.read_csv('data/countratingbooks.csv')
+df_avg = pd.read_csv('data/goodratingbooks.csv')
 
 fig3, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='N_ratings', y='Book-Title', data=df_countbook,palette='Set1')
+sns.barplot(x='avg_rating', y='Book-Title', data=df_avg,palette='Set1')
 
 # x축 레이블 90도 회전
 ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
