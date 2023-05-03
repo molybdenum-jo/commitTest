@@ -20,7 +20,7 @@ st.sidebar.markdown("""
 st.write("""
 ### Dataset
 """)
-df_train = pd.read_csv('data/AGE.csv')
+df_train = pd.read_csv('data/Country.csv')
 st.dataframe(df_train)
 
 
@@ -48,7 +48,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 데이터 불러오기
-df = pd.read_csv('data/AGE.csv')
+df = pd.read_csv('data/Country.csv')
 
 # 히스토그램 그리기
 fig4, ax = plt.subplots(figsize=(10, 6))
@@ -66,7 +66,27 @@ js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').off
     
 st.markdown("<h3 id='part-2-location-analysis'>Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
 
+st.write("""
+- city, state, country 로 구성.
+- 국가 정보만 있는 새로운 열 생성
+""")
 
+
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 데이터 불러오기
+df_country = pd.read_csv('data/Country.csv')
+
+# 히스토그램 그리기
+fig3, ax = sns.barplots(figsize=(10, 6))
+ax.barplot(data=df_country, x=countriestop10.index, y=countriestop10.Country)
+ax.set_title('Number of ratings by country') # 그래프 제목 설정
+
+# 그래프 표시하기
+st.pyplot(fig3)
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
