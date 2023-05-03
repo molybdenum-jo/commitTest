@@ -76,16 +76,15 @@ import seaborn as sns
 # 데이터 불러오기
 
 countriestop10=df['Country'].value_counts().reset_index().head(10)
-countriestop10.set_index('index')
-
-countriestop10pct=df['Country'].value_counts(1).reset_index().head(10)
-countriestop10pct.set_index('index')
+countriestop10 = countriestop10.rename(columns={'index':'Country'})
+countriestop10.set_index('Country', inplace=True)
 
 fig3, ax = sns.barplot(data=df, x=countriestop10.index.values, y=countriestop10.Country)
 ax.set_title('Number of ratings by country') # 그래프 제목 설정
 
 # 그래프 표시하기
 st.pyplot(fig3)
+
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
