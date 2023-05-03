@@ -73,6 +73,8 @@ js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').off
 st.markdown("<h3 id='part-2-location-analysis'>✅Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
+#### DATA 전처리
+
 - Location(city, state, country) 로 구성.
 - Location에 이상값이나 결측값이 존재(이상값과 결측값 수정 및 제거)
 - 국가 정보만 있는 새로운 열 생성
