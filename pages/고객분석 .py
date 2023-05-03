@@ -162,7 +162,7 @@ import seaborn as sns
 df_user = pd.read_csv('data/popbooks.csv')
 
 fig1, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='N_ratings', y='Book-Title', data=popbooks,palette='Set1')
+sns.barplot(x='N_ratings', y='Book-Title', data=df_user,palette='Set1')
 
 # x축 레이블 90도 회전
 ax.xticks(rotation=50)
