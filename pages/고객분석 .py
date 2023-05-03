@@ -6,7 +6,9 @@ import plotly.express as px
 
 
 st.header('고객분석')
-st.sidebar.title('고객분석')
+with st.sidebar:
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
 
 st.write("""
 ### DATA 전처리
@@ -40,15 +42,7 @@ plt.ylabel('Count') # y축 레이블 설정
 # 그래프 표시하기
 st.pyplot(fig4)
 
-tab1, tab2= st.tabs(['Tab A' , 'Tab B'])
 
-with tab1:
-  #tab A 를 누르면 표시될 내용
-  st.write('hello')
-    
-with tab2:
-  #tab B를 누르면 표시될 내용 
-  st.write('hi')
 
 
 st.write(""" 
