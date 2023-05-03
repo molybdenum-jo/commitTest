@@ -176,7 +176,7 @@ st.write('')
 st.write('')
 
 st.write("""
-##### ✔ 유저들이 가장 많이 이용한 상위 10개 도서
+##### ✔ 유저별 최대 평점 수 
 
 """)
 import streamlit as st
@@ -186,16 +186,16 @@ import seaborn as sns
 
 # 데이터 불러오기
 
-df_user = pd.read_csv('data/popbooks.csv')
+df_user = pd.read_csv('data/users.csv')
 
 fig1, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='N_ratings', y='Book-Title', data=df_user,palette='Set1')
+sns.barplot(x='N_ratings', y='User-ID', data=df_user,palette='Set1')
 
 # x축 레이블 90도 회전
 ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
 
 # 그래프 제목 추가
-ax.set_title('Top10 Books most read by users', fontsize=16)
+ax.set_title('Maximum number of ratings for top 10 users', fontsize=16)
 
 # 그래프 표시하기
 st.pyplot(fig1)
