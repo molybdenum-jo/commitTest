@@ -64,5 +64,5 @@ st.write("""
 ### Dataset
 """)
 
-df = pd.read_csv('data/AGE.csv')
+df = pd.read_csv('data/TRAIN.csv')
 st.dataframe(df)
