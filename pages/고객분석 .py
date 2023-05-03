@@ -6,9 +6,9 @@ import plotly.express as px
 
 
 st.header('고객분석')
-with st.sidebar:
-    with st.echo():
-        st.write("This code will be printed to the sidebar.")
+with st.spinner("Loading..."):
+        time.sleep(5)
+    st.success("Done!")
 
 st.write("""
 ### DATA 전처리
