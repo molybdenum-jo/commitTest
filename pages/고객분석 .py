@@ -65,9 +65,12 @@ st.markdown("<h3 id='part-2-location-analysis'>Part 2. 지역별 분석</h3>", u
 st.write("""
 - city, state, country 로 구성.
 - 국가 정보만 있는 새로운 열 생성
+- 주 정보만 있는 새로운 열 생성
 """)
 
-
+st.write("""
+#####평점이 많은 나라(TOP10)
+""")
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
