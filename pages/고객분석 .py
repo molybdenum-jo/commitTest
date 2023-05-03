@@ -75,6 +75,8 @@ import seaborn as sns
 
 # 데이터 불러오기
 
+df = pd.read_csv('data/Country.csv')
+
 countriestop10=df['Country'].value_counts().reset_index().head(10)
 countriestop10 = countriestop10.rename(columns={'index':'Country'})
 countriestop10.set_index('Country', inplace=True)
