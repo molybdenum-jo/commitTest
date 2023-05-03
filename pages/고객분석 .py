@@ -140,7 +140,7 @@ st.write("""
 import streamlit as st
 
 dashboard_url = "https://public.tableau.com/views/top30_16830926966980/1?:showVizHome=no&embed=true/language=ko-KR&:display_count=n&:origin=viz_share_link"
-st.components.v1.html(f'<iframe src="{dashboard_url}" width="100" height="100"></iframe>')
+st.components.v1.html(f'<iframe src="{dashboard_url}" width="800" height="600"></iframe>')
 
 st.write("""
    
