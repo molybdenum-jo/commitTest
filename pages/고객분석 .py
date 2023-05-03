@@ -78,8 +78,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # 데이터 불러오기
+
 fig, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(data=df_country, x='Country', y='Number of ratings', ax=ax)
+sns.barplot(data=df, x='Country', y='Number of ratings', ax=ax)
 ax.set_title('Number of ratings by country')
 ax.set_xlabel('Country')
 ax.set_ylabel('Number of ratings')
