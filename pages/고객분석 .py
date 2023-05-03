@@ -200,8 +200,3 @@ ax.set_title('Top10 Books most read by users', fontsize=16)
 # 그래프 표시하기
 st.pyplot(fig1)
  
-st.write("""
-###### 도서당 평점의 갯수의 평균이 3.57이므로 N_ratings가 4 이상인 평점좋은 도서는 다음과 같다
-
-
-""")
