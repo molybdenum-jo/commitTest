@@ -64,33 +64,5 @@ st.write("""
 ### Dataset
 """)
 
-import streamlit as st
-import pandas as pd
-from streamlit.hashing import _CodeHasher
-from streamlit.report_thread import get_report_ctx
-from streamlit.server.session_state import get as get_session_state
-
-# 파일 업로드와 관련된 상태를 저장하기 위한 클래스
-class UploadState:
-    def __init__(self):
-        self.uploaded_file = None
-
-# 파일 업로드와 관련된 상태를 초기화하는 함수
-def reset_upload_state():
-    session_state = get_session_state()
-    session_state.upload_state = UploadState()
-
-# CSV 파일 업로드
-session_state = get_session_state()
-if not hasattr(session_state, "upload_state"):
-    reset_upload_state()
-
-uploaded_file = st.file_uploader("CSV 파일 업로드", type="csv")
-
-if uploaded_file is not None:
-    session_state.upload_state.uploaded_file = uploaded_file
-
-# 업로드된 파일을 DataFrame으로 변환
-if session_state.upload_state.uploaded_file is not None:
-    df = pd.read_csv(session_state.upload_state.uploaded_file)
-    st.write(df)
+df = pd.read_csv('data/AGE.CSV')
+st.dataframe(df)
