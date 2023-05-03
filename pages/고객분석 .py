@@ -63,7 +63,8 @@ js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').off
 st.markdown("<h3 id='part-2-location-analysis'>Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
-- city, state, country 로 구성.
+- Location(city, state, country) 로 구성.
+- Location에 이상값이나 결측값이 존재(이상값과 결측값 수정 및 제거)
 - 국가 정보만 있는 새로운 열 생성
 - 주 정보만 있는 새로운 열 생성
 
@@ -72,7 +73,7 @@ st.write("""
 
 
 st.write("""
-##### 나라별 평점 수(TOP10)
+##### 상위 10개 나라별 평점 수
 도서 이용량이 많은 나라는 미국이 압도적으로 가장 많으며 캐나다, 영국, 독일, 호주 등으로 분포되어있다.
 - USA = 미국
 - CAN = 캐나다
@@ -105,7 +106,7 @@ st.pyplot(fig3)
 
 
 st.write("""
-##### 나라별 평균 평점 수(TOP10)
+##### 상위 10개 나라별 평균 평점 수 
 나라별 도서평균평점을 가장 높게 준 나라는 순서대로 우간다이며 가봉 리투아니아 과테말라가 뒤를 잇는다.
 - UGA = 우간다
 - GAB = 가봉
@@ -129,13 +130,45 @@ import seaborn as sns
 
 df_avg = pd.read_csv('data/avg_country.csv')
 
-fig3, ax = plt.subplots(figsize=(10, 6))
+fig2, ax = plt.subplots(figsize=(10, 6))
 sns.barplot(x='Country', y='Rating-Per-Count', data=df_avg, ax=ax)
 ax.set_title('Average rating by country') # 그래프 제목 설정
 
 # 그래프 표시하기
 st.pyplot(fig3)
+
+
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
-    
-st.markdown("<h3 id='part-3-user-analysi'>Part 2. 유저별 분석</h3>", unsafe_allow_html=True)
+st.markdown("<h3 id='part-3-user-analysi'>Part 3. 유저별 분석</h3>", unsafe_allow_html=True)
+
+st.write("""
+##### 도서별 이용횟수와 평균 평점
+도서의 정보 및 이용 횟수와 평균 평점 추가한 데이터셋 생성
+
+
+""")
+
+st.write("""
+##### 가장 많이 이용한 상위 10개 도서
+""")
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 데이터 불러오기
+
+df_user = pd.read_csv('data/popbooks.csv')
+
+fig1, ax = plt.subplots(figsize=(10, 6))
+sns.barplot(x='N_ratings', y='Book-Title', data=popbooks,palette='Set1')
+
+# x축 레이블 90도 회전
+ax.xticks(rotation=50)
+
+# 그래프 제목 추가
+ax.title('Top10 Books most read by users', fontsize=16)
+
+# 그래프 표시하기
+st.pyplot(fig1)
