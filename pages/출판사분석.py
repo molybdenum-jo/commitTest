@@ -36,11 +36,10 @@ st.write("""
 
 - 예를들어 Harry Potter 단어가 포함된 단어를 찾으면 해당 정보를 아래와 같이 찾을 수 있음
 - 같은 책이라도 에디션에 따라 나뉘는 종류가 다르게 경우가 있다
-- 같은 저자라도 J.K Rowling, Joanne K,Rowling, Joanne K.Rowling과 같이 다른 방식으로 표기가 되어있는 경우가 있다
 """)
 
 st.write("""
-##### ✔ 유저들이 가장 많이 이용한 상위 10개 도서
+##### ✔ 상위 10위 도서별 평균 평점
 
 """)
 import streamlit as st
@@ -50,10 +49,10 @@ import seaborn as sns
 
 # 데이터 불러오기
 
-df_user = pd.read_csv('data/popbooks.csv')
+df_book = pd.read_csv('data/popbooks.csv')
 
 fig1, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='N_ratings', y='Book-Title', data=df_user,palette='Set1')
+sns.barplot(x='N_ratings', y='Book-Title', data=df_book,palette='Set1')
 
 # x축 레이블 90도 회전
 ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
@@ -65,44 +64,39 @@ ax.set_title('Top10 Books most read by users', fontsize=16)
 st.pyplot(fig1)
 
 
+js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
+  
+st.markdown("<h3 id='part-2-author-analysis'>✅Part 2. 작가 분석</h3>", unsafe_allow_html=True)
+
+st.write("""
+- 같은 저자라도 J.K Rowling, Joanne K,Rowling, Joanne K.Rowling과 같이 다른 방식으로 표기가 되어있는 경우가 있다
+""")
+
+st.write("""
+##### ✔ 상위10위 작가별 평균 평점
+
+""")
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # 데이터 불러오기
-df = pd.read_csv('data/Country.csv')
 
-# 히스토그램 그리기
-fig4 = plt.figure()
-plt.hist(data=df, x='Age', bins=30, rwidth=0.8)
-plt.title('Age Distribution') # 그래프 제목 설정
-plt.xlabel('Age') # x축 레이블 설정
-plt.ylabel('Count') # y축 레이블 설정
+df_author = pd.read_csv('data/goodratingbooks.csv')
+
+fig2, ax = plt.subplots(figsize=(10, 6))
+sns.barplot(x='avg_rating', y='Book-Author', data=df_author,palette='Set1')
+
+# x축 레이블 90도 회전
+ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
+
+# 그래프 제목 추가
+ax.set_title('Top 10 Book of rating by author', fontsize=16)
 
 # 그래프 표시하기
-st.pyplot(fig4)
+st.pyplot(fig2)
 
-st.write('')
-st.write('')
-st.write('')
-
-js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
-  
-st.markdown("<h3 id='part-2-location-analysis'>✅Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
-
-st.write("""
-#### DATA 전처리
-
-- Location(city, state, country) 로 구성.
-- 해당 데이터는 사용자가 자유롭게 지역을 기입하는 방식으로 구성되어 있어 아래와 같이 국가정보 파악이 힘든 데이터가 있음을 발견(이상값과 결측값 수정 및 제거)
-- 국가 정보만 있는 새로운 열 생성(국가명(Country)을 ISO-3166-1 alpha-3 국가 코드로 변환)
-- 주 정보만 있는 새로운 열 생성
-""")
-
-st.write("""
-   
-     
-""")
 
 st.write("""
 ##### ✔ 상위 10개 나라별 평점 수
