@@ -66,7 +66,10 @@ st.write("""
 - city, state, country 로 구성.
 - 국가 정보만 있는 새로운 열 생성
 - 주 정보만 있는 새로운 열 생성
+
+
 """)
+
 
 st.write("""
 ##### 나라별 평점 수(TOP10)
@@ -100,6 +103,21 @@ ax.set_title('Number of ratings by country') # 그래프 제목 설정
 # 그래프 표시하기
 st.pyplot(fig3)
 
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 데이터 불러오기
+
+df_avg = pd.read_csv('data/avg_country.csv')
+
+fig3, ax = plt.subplots(figsize=(10, 6))
+sns.barplot(x='Country', y='Rating-Per-Count', data=df_avg, ax=ax)
+ax.set_title('Average rating by country') # 그래프 제목 설정
+
+# 그래프 표시하기
+st.pyplot(fig3)
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
     
