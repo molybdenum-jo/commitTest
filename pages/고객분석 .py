@@ -81,7 +81,11 @@ countriestop10.set_index('index')
 countriestop10pct=df['Country'].value_counts(1).reset_index().head(10)
 countriestop10pct.set_index('index')
 
-sns.barplot(x=countriestop10.index, y=countriestop10.Country)
+fig3, ax = sns.barplot(data=df, x=countriestop10.index.values, y=countriestop10.Country)
+ax.set_title('Number of ratings by country') # 그래프 제목 설정
+
+# 그래프 표시하기
+st.pyplot(fig3)
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
