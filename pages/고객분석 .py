@@ -75,9 +75,9 @@ import seaborn as sns
 
 # 데이터 불러오기
 
-df = pd.read_csv('data/Country.csv')
+df_location = pd.read_csv('data/rating_count.csv')
 
-countriestop10=df['Country'].value_counts().reset_index().head(10)
+countriestop10=df_location['Country'].value_counts().reset_index().head(10)
 countriestop10.set_index('index')
 
 fig3, ax = plt.subplots(figsize=(10, 6))
