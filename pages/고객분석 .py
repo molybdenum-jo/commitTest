@@ -26,7 +26,10 @@ st.write("""
 df_train = pd.read_csv('data/AGE.csv')
 st.dataframe(df_train)
 
-#### Part 1. 나이별 분석
+st.write("""
+### Part 1. 나이별 분석
+""")
+
 st.markdown("<h1 id='part-1-age-analysis'>Part 1. 나이별 분석</h1>", unsafe_allow_html=True)
 
 import streamlit as st
