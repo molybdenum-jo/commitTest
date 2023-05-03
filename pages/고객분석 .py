@@ -7,13 +7,9 @@ import plotly.express as px
 
 st.header('고객분석')
 st.sidebar.title('고객분석')
-
-if st.sidebar.button('part 1. 나이별 분석'):
-    js = "window.scrollTo(0, document.getElementById('part-1-나이별-분석').offsetTop);"
-    # 버튼 클릭 시 이동 함수 호출
-    html = '<script>{}</script>'.format(js)
-    st.markdown(html, unsafe_allow_html=True)
-    st.write('You clicked Category 1!')
+st.sidebar.subheader("part 1. 나이별 분석")
+st.sidebar.subheader("part 2. 지역별 분석")
+st.sidebar.subheader("part 3. 유저 분석 ")
 
 st.write("""
 ### DATA 전처리
