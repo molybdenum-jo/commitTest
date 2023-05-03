@@ -26,6 +26,8 @@ st.write("""
 df_train = pd.read_csv('data/Country.csv')
 st.dataframe(df_train)
 
+st.write('')
+st.write('')
 
 js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
 
