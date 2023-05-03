@@ -70,6 +70,7 @@ st.write("""
 
 st.write("""
 ##### 나라별 평점 수(TOP10)
+도서 이용량이 많은 나라는 미국이 압도적으로 가장 많으며 캐나다, 영국, 독일, 호주 등으로 분포되어있다.
 - USA = 미국
 - CAN = 캐나다
 - GBR = 영국
@@ -80,6 +81,8 @@ st.write("""
 - PRT = 포르투갈
 - NZL = 뉴질랜드
 - MYS = 말레이시아
+
+
 """)
 import streamlit as st
 import pandas as pd
