@@ -39,7 +39,8 @@ st.write("""
 
 st.write("""
 ##### ✔ 상위 10위 도서별 평점수
-
+- Wild Animus 책이 21번으로 가장 많은 평점이 달렸습니다.
+- 그 뒤로 Where the Heart Is (Oprah's Book Club (Paperback)), The Da Vinci Code, The Red Tent (Bestselling Backlist) 등이 다음 평점 수를 기록했다.
 """)
 import streamlit as st
 import pandas as pd
