@@ -77,7 +77,7 @@ import seaborn as sns
 
 df = pd.read_csv('data/Country.csv')
 
-countriestop10=new_train['Country'].value_counts().reset_index().head(10)
+countriestop10=df['Country'].value_counts().reset_index().head(10)
 countriestop10.set_index('index')
 
 fig3, ax = plt.subplots(figsize=(10, 6))
