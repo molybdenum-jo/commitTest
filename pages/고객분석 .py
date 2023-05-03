@@ -27,11 +27,13 @@ df_train = pd.read_csv('data/AGE.csv')
 st.dataframe(df_train)
 
 
-st.write("""
-### Part 1. 나이별 분석
-""")
+if st.sidebar.button("Part 1. 나이별 분석"):
+    js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
+    html = '<script>{}</script>'.format(js)
+    st.markdown(html, unsafe_allow_html=True)
+    
+st.markdown("<h3 id='part-1-age-analysis'>Part 1. 나이별 분석</h3>", unsafe_allow_html=True)
 
-st.markdown("<h2 id='part-1-age-analysis'>Part 1. 나이별 분석</h2>", unsafe_allow_html=True)
 
 
 import streamlit as st
