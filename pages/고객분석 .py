@@ -8,7 +8,7 @@ import plotly.express as px
 st.header('고객분석')
 st.sidebar.title('고객분석')
 st.sidebar.markdown("""
-    ## Table of Contents
+    ## 고객 분석
     - [part 1. 나이별 분석](#part-1-age-analysis)
     - [part 2. 지역별 분석](#part-2-location-analysis)
     - [part 3. 유저별 분석](#part-3-user-analysis)
@@ -26,7 +26,7 @@ st.write("""
 df_train = pd.read_csv('data/AGE.csv')
 st.dataframe(df_train)
 
-st.sidebar.markdown("[Part 1. 나이별 분석](#part-1-age-analysis)")
+
 st.write("""
 ### Part 1. 나이별 분석
 """)
