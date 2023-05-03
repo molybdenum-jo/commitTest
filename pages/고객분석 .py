@@ -75,10 +75,10 @@ import seaborn as sns
 
 # 데이터 불러오기
 
-countriestop10=new_train['Country'].value_counts().reset_index().head(10)
+countriestop10=df['Country'].value_counts().reset_index().head(10)
 countriestop10.set_index('index')
 
-countriestop10pct=new_train['Country'].value_counts(1).reset_index().head(10)
+countriestop10pct=df['Country'].value_counts(1).reset_index().head(10)
 countriestop10pct.set_index('index')
 
 sns.barplot(x=countriestop10.index, y=countriestop10.Country)
