@@ -21,11 +21,13 @@ st.dataframe(df_train)
 st.write(""" 
 ### part 1. 나이별 분석
 """)
-import streamlit as st
-from PIL import Image
+df = pd.read_csv('data/AGE.csv')
 
-image = Image.open('image.jpg')
-st.image(image, caption='Image Caption')
+df['Age'].plot.hist(bins=30) # 히스토그램 그리기
+plt.title('Age Distribution') # 그래프 제목 설정
+plt.xlabel('Age') # x축 레이블 설정
+plt.ylabel('Count') # y축 레이블 설정
+plt.show() # 그래프 보이기
 
 
 st.write(""" 
