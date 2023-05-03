@@ -20,7 +20,7 @@ st.write("""
 
 st.write(""" 
 ## Team structure
-
+""")
 
 df = pd.DataFrame({
     '역할':['공공 데이터 적용,최종 보고서 작성,ppt정리',
@@ -30,7 +30,7 @@ df = pd.DataFrame({
     }, index=pd.Index(data=['김상민','조수연','강다현','사공도경'], name='이름'))
 
 st.dataframe(df)
-""")
+
 
 st.write(""" 
 ## Insight
