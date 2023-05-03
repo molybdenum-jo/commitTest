@@ -69,7 +69,17 @@ st.write("""
 """)
 
 st.write("""
-#####평점이 많은 나라(TOP10)
+#####나라별 평점 수(TOP10)
+- USA = 미국
+- CAN = 캐나다
+- GBR = 영국
+- DEU = 독일
+- AUS = 호주
+- ESP = 스페인
+- FRA = 프랑스
+- PRT = 포르투갈
+- NZL = 뉴질랜드
+- MYS = 말레이시아
 """)
 import streamlit as st
 import pandas as pd
