@@ -26,6 +26,24 @@ st.write("""
 df_train = pd.read_csv('data/AGE.csv')
 st.dataframe(df_train)
 
+import hashlib
+
+# 'part1'이라는 문자열을 해시 함수를 통해 고유한 값으로 변환
+hash_part1 = hashlib.md5('part1'.encode('utf-8')).hexdigest()
+
+# 사이드바에 'part1'이라는 소제목 생성
+if st.sidebar.button('part1'):
+    # 생성한 해시 값을 이용해 링크 생성
+    st.sidebar.markdown(f'<a href="#{hash_part1}">Go to part1</a>', unsafe_allow_html=True)
+
+st.write('This is a title')
+st.write('This is some text')
+st.write('This is another title')
+
+# 'part1'이라는 소제목 위치에 'part1'이라는 텍스트 생성
+st.markdown(f'<h2 id="{hash_part1}">part1</h2>', unsafe_allow_html=True)
+st.write('This is part1')
+
 ### Part 1. 나이별 분석
 st.markdown("<h1 id='part-1-age-analysis'>Part 1. 나이별 분석</h1>", unsafe_allow_html=True)
 
