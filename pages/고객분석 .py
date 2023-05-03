@@ -8,10 +8,11 @@ import plotly.express as px
 st.header('고객분석')
 st.sidebar.title('고객분석')
 st.sidebar.subheader("part 1. 나이별 분석")
-if st.sidebar.button('Go to Part 1'):
-    js = "window.scrollTo(0, document.getElementById('part-1').offsetTop);"
-    html = '<script>{}</script>'.format(js)
-    st.markdown(html, unsafe_allow_html=True)
+st.sidebar.markdown("""
+    ## Table of Contents
+    - [Part 1. Age Analysis](#part-1-age-analysis)
+    - [Part 2. Gender Analysis](#part-2-gender-analysis)
+""")
 st.sidebar.subheader("part 2. 지역별 분석")
 st.sidebar.subheader("part 3. 유저 분석 ")
 
