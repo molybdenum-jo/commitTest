@@ -38,13 +38,13 @@ df = pd.read_csv('data/AGE.csv')
 
 # 히스토그램 그리기
 fig4 = plt.figure()
-plt.hist(data=df, x='Age', bins=30, rwidth=0.8, )
+plt.hist(data=df, x='Age', bins=30, rwidth=0.8)
 plt.title('Age Distribution') # 그래프 제목 설정
 plt.xlabel('Age') # x축 레이블 설정
 plt.ylabel('Count') # y축 레이블 설정
 
 # 그래프 표시하기
-st.pyplot(fig4)
+st.pyplot(fig4, width=100, height=100)
 
 ### Part 2. 지역별 분석
 st.markdown("<h1 id='part-2-location-analysis'>Part 2. 지역별 분석s</h1>", unsafe_allow_html=True)
