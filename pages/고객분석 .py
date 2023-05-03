@@ -168,7 +168,7 @@ sns.barplot(x='N_ratings', y='Book-Title', data=df_user,palette='Set1')
 ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
 
 # 그래프 제목 추가
-ax.title('Top10 Books most read by users', fontsize=16)
+ax.set_title('Top10 Books most read by users', fontsize=16)
 
 # 그래프 표시하기
 st.pyplot(fig1)
