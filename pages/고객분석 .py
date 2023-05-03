@@ -30,7 +30,7 @@ st.dataframe(df_train)
 st.write(""" 
 ### part 1. 나이별 분석
 """)
-st.markdown("# part 1. 나이별 분석")
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
