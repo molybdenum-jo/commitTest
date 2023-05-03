@@ -23,11 +23,9 @@ st.write("""
 """)
 df = pd.read_csv('data/AGE.csv')
 
-df['Age'].plot.hist(bins=30) # 히스토그램 그리기
-plt.title('Age Distribution') # 그래프 제목 설정
-plt.xlabel('Age') # x축 레이블 설정
-plt.ylabel('Count') # y축 레이블 설정
-plt.show() # 그래프 보이기
+fig2 = px.bar( df, x='Age', y='Count')        #plotly bar차트
+    st.plotly_chart(fig2)
+
 
 
 st.write(""" 
