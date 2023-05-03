@@ -5,7 +5,7 @@ import matplotlib as plt
 import plotly.express as px
 
 
-st.header('고객분석')
+st.header('👨‍💻고객분석')
 st.sidebar.title('고객분석')
 
 
