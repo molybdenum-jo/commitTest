@@ -176,7 +176,7 @@ st.write('')
 st.write('')
 
 st.write("""
-##### ✔ 유저별 최대 평점 수 
+##### ✔ 상위 10위 유저별 최대 평점 수 
 
 """)
 import streamlit as st
