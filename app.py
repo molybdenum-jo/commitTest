@@ -64,10 +64,49 @@ st.write("""
 ### Dataset
 """)
 
+from streamlit.hashing import _CodeHasher
+from streamlit.report_thread import get_report_ctx
+from streamlit.server.server import Server
+
+# 파일 업로드와 관련된 상태를 저장하기 위한 클래스
+class UploadState:
+    def __init__(self):
+        self.uploaded_file = None
+
+# 현재 세션의 상태를 가져오는 함수
+def get_session():
+    session_id = get_report_ctx().session_id
+    session_info = Server.get_current()._get_session_info(session_id)
+    if session_info is None:
+        return None
+    else:
+        return session_info.session
+
+# 파일 업로드와 관련된 상태를 저장하는 객체를 가져오는 함수
+def get_upload_state():
+    session = get_session()
+    if session is None:
+        return None
+    if not hasattr(session, "_custom_session_state"):
+        session._custom_session_state = {}
+    if not "upload_state" in session._custom_session_state:
+        session._custom_session_state["upload_state"] = UploadState()
+    return session._custom_session_state["upload_state"]
+
+# 파일 업로드와 관련된 상태를 초기화하는 함수
+def reset_upload_state():
+    session = get_session()
+    if session is not None:
+        session._custom_session_state.pop("upload_state", None)
+
 # CSV 파일 업로드
+upload_state = get_upload_state()
 uploaded_file = st.file_uploader("CSV 파일 업로드", type="csv")
 
-# 업로드된 파일을 DataFrame으로 변환
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
-    st.dataframe(df)
+    upload_state.uploaded_file = uploaded_file
+
+# 업로드된 파일을 DataFrame으로 변환
+if upload_state.uploaded_file is not None:
+    df = pd.read_csv(upload_state.uploaded_file)
+    st.write(df)
