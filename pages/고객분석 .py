@@ -25,8 +25,9 @@ st.write("""
 """)
 df = pd.read_csv('data/AGE.csv')
 
-fig2 = px.bar( df, x='Age', y='Count')        #plotly bar차트
-st.plotly_chart(fig2)
+fig4 = plt.figure()
+plt.hist(data= df, x = 'Age',bins=20,rwidth=0.8)
+st.pyplot(fig4)
 
 
 
