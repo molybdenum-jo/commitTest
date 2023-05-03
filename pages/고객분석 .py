@@ -52,6 +52,10 @@ if st.sidebar.button("Part 3. 유저별 분석"):
     st.markdown(html, unsafe_allow_html=True)
     
 
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
 # 데이터 불러오기
 df = pd.read_csv('data/AGE.csv')
 
