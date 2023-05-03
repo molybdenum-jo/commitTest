@@ -77,18 +77,15 @@ import seaborn as sns
 
 df = pd.read_csv('data/Country.csv')
 
-countriestop10 = df['Country'].value_counts().reset_index().head(10)
-countriestop10.columns = ['Country', 'Count']
-countriestop10.set_index('Country', inplace=True)
-
-countriestop10pct = df['Country'].value_counts(normalize=True).reset_index().head(10)
-countriestop10pct.columns = ['Country', 'Percentage']
-countriestop10pct.set_index('Country', inplace=True)
+countriestop10=new_train['Country'].value_counts().reset_index().head(10)
+countriestop10.set_index('index')
 
 fig3, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(data=countriestop10, x=countriestop10.index, y='Count', ax=ax)
-ax.set_title('Number of ratings by country')
+sns.barplot(x='index', y='Country', data=countriestop10, ax=ax)
+ax.set_title('Number of ratings by country') # 그래프 제목 설정
 
+# 그래프 표시하기
+st.pyplot(fig3)
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
