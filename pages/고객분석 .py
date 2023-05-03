@@ -40,7 +40,15 @@ plt.ylabel('Count') # y축 레이블 설정
 # 그래프 표시하기
 st.pyplot(fig4)
 
+tab1, tab2= st.tabs(['Tab A' , 'Tab B'])
 
+with tab1:
+  #tab A 를 누르면 표시될 내용
+  st.write('hello')
+    
+with tab2:
+  #tab B를 누르면 표시될 내용 
+  st.write('hi')
 
 
 st.write(""" 
