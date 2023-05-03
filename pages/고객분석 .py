@@ -24,8 +24,6 @@ df_train = pd.read_csv('data/Country.csv')
 st.dataframe(df_train)
 
 
-
-
 js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
 
     
@@ -60,13 +58,8 @@ plt.ylabel('Count') # y축 레이블 설정
 # 그래프 표시하기
 st.pyplot(fig4)
 
-# 그래프 표시하기
-st.pyplot(fig4)
-
-
 js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
-
-    
+  
 st.markdown("<h3 id='part-2-location-analysis'>Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
