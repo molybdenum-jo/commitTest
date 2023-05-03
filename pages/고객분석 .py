@@ -8,6 +8,10 @@ import plotly.express as px
 st.header('고객분석')
 st.sidebar.title('고객분석')
 st.sidebar.subheader("part 1. 나이별 분석")
+if st.sidebar.button('Go to Part 1'):
+    js = "window.scrollTo(0, document.getElementById('part-1').offsetTop);"
+    html = '<script>{}</script>'.format(js)
+    st.markdown(html, unsafe_allow_html=True)
 st.sidebar.subheader("part 2. 지역별 분석")
 st.sidebar.subheader("part 3. 유저 분석 ")
 
@@ -23,9 +27,11 @@ st.write("""
 df_train = pd.read_csv('data/AGE.csv')
 st.dataframe(df_train)
 
+# part 1
 st.write(""" 
 ### part 1. 나이별 분석
 """)
+st.write('<div id="part-1"></div>', unsafe_allow_html=True)
 
 import streamlit as st
 import pandas as pd
