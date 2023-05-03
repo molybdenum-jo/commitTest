@@ -51,11 +51,11 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('data/Country.csv')
 
 # 히스토그램 그리기
-fig4, ax = plt.subplots(figsize=(10, 6))
-ax.hist(data=df, x='Age', bins=30, rwidth=0.8)
-ax.set_title('Age Distribution') # 그래프 제목 설정
-ax.set_xlabel('Age') # x축 레이블 설정
-ax.set_ylabel('Count') # y축 레이블 설정
+countriestop10=new_train['Country'].value_counts().reset_index().head(10)
+countriestop10.set_index('index')
+countriestop10pct=new_train['Country'].value_counts(1).reset_index().head(10)
+countriestop10pct.set_index('index')
+sns.barplot(x=countriestop10.index, y=countriestop10.Country)
 
 # 그래프 표시하기
 st.pyplot(fig4)
