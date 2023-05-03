@@ -84,6 +84,7 @@ ax.set_title('Number of ratings by country')
 ax.set_xlabel('Country')
 ax.set_ylabel('Number of ratings')
 
+
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
     
