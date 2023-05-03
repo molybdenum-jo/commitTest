@@ -51,11 +51,14 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('data/Country.csv')
 
 # 히스토그램 그리기
-countriestop10=new_train['Country'].value_counts().reset_index().head(10)
-countriestop10.set_index('index')
-countriestop10pct=new_train['Country'].value_counts(1).reset_index().head(10)
-countriestop10pct.set_index('index')
-sns.barplot(x=countriestop10.index, y=countriestop10.Country)
+fig4 = plt.figure()
+plt.hist(data=df, x='Age', bins=30, rwidth=0.8)
+plt.title('Age Distribution') # 그래프 제목 설정
+plt.xlabel('Age') # x축 레이블 설정
+plt.ylabel('Count') # y축 레이블 설정
+
+# 그래프 표시하기
+st.pyplot(fig4)
 
 # 그래프 표시하기
 st.pyplot(fig4)
@@ -79,12 +82,13 @@ import seaborn as sns
 
 # 데이터 불러오기
 
-fig, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(data=df, x='Country', y='Number of ratings', ax=ax)
-ax.set_title('Number of ratings by country')
-ax.set_xlabel('Country')
-ax.set_ylabel('Number of ratings')
+countriestop10=new_train['Country'].value_counts().reset_index().head(10)
+countriestop10.set_index('index')
 
+countriestop10pct=new_train['Country'].value_counts(1).reset_index().head(10)
+countriestop10pct.set_index('index')
+
+sns.barplot(x=countriestop10.index, y=countriestop10.Country)
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
