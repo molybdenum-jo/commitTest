@@ -32,7 +32,7 @@ st.dataframe(df_train)
 js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
 
     
-st.markdown("<h3 id='part-1-age-analysis'>Part 1. 나이별 분석</h3>", unsafe_allow_html=True)
+st.markdown("<h3 id='part-1-age-analysis'>✅Part 1. 나이별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
 #### DATA 전처리
@@ -65,7 +65,7 @@ st.pyplot(fig4)
 
 js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
   
-st.markdown("<h3 id='part-2-location-analysis'>Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
+st.markdown("<h3 id='part-2-location-analysis'>✅Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
 - Location(city, state, country) 로 구성.
@@ -145,7 +145,7 @@ st.pyplot(fig3)
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
-st.markdown("<h3 id='part-3-user-analysi'>Part 3. 유저별 분석</h3>", unsafe_allow_html=True)
+st.markdown("<h3 id='part-3-user-analysi'>✅Part 3. 유저별 분석</h3>", unsafe_allow_html=True)
 
 st.write("""
 ##### 도서별 이용횟수와 평균 평점
