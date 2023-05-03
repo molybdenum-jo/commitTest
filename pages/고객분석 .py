@@ -8,18 +8,8 @@ import plotly.express as px
 st.header('고객분석')
 st.sidebar.title('고객분석')
 st.sidebar.markdown('[This is a link](#category1)')
-category = st.sidebar.radio(
-    'Select a category:',
-    ['Category 1', 'Category 2', 'Category 3']
-)
-
-# 선택한 카테고리에 따라 출력
-if category == 'Category 1':
-    st.write('You selected Category 1')
-elif category == 'Category 2':
-    st.write('You selected Category 2')
-elif category == 'Category 3':
-    st.write('You selected Category 3')
+if st.sidebar.button('Category 1', key='category1'):
+    st.write('You clicked Category 1!')
 
 st.write("""
 ### DATA 전처리
