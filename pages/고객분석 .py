@@ -7,8 +7,12 @@ import plotly.express as px
 
 st.header('고객분석')
 st.sidebar.title('고객분석')
-st.sidebar.markdown('[This is a link](#category1)')
-if st.sidebar.button('Category 1', key='category1'):
+
+if st.sidebar.button('part 1. 나이별 분석'):
+    js = "window.scrollTo(0, document.getElementById('part 1. 나이별 분석').offsetTop);"
+    # 버튼 클릭 시 이동 함수 호출
+    html = '<script>{}</script>'.format(js)
+    st.markdown(html, unsafe_allow_html=True)
     st.write('You clicked Category 1!')
 
 st.write("""
