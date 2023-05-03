@@ -63,6 +63,11 @@ plt.ylabel('Count') # y축 레이블 설정
 # 그래프 표시하기
 st.pyplot(fig4)
 
+st.write("""
+   
+     
+""")
+
 js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
   
 st.markdown("<h3 id='part-2-location-analysis'>✅Part 2. 지역별 분석</h3>", unsafe_allow_html=True)
@@ -92,9 +97,13 @@ st.write("""
 - PRT = 포르투갈
 - NZL = 뉴질랜드
 - MYS = 말레이시아
-
-
 """)
+
+st.write("""
+   
+     
+""")
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -125,9 +134,13 @@ st.write("""
 - GNB = 기니비사우
 - AND = 안다우스
 - BRN = 브루나이
-
-
 """)
+
+st.write("""
+   
+     
+""")
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -143,7 +156,10 @@ ax.set_title('Average rating by country') # 그래프 제목 설정
 
 # 그래프 표시하기
 st.pyplot(fig3)
-
+st.write("""
+   
+     
+""")
 
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
