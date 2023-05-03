@@ -137,6 +137,10 @@ st.write("""
 - AND = 안다우스
 - BRN = 브루나이
 """)
+import streamlit as st
+
+dashboard_url = "https://public.tableau.com/views/top30_16830926966980/1?:showVizHome=no&embed=true/language=ko-KR&:display_count=n&:origin=viz_share_link"
+st.components.v1.html(f'<iframe src="{dashboard_url}" width="2000" height="2000"></iframe>')
 
 st.write("""
    
