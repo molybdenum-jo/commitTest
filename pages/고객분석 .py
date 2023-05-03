@@ -77,11 +77,8 @@ import seaborn as sns
 
 df_location = pd.read_csv('data/rating_count.csv')
 
-countriestop10=df_location['Country'].value_counts().reset_index().head(10)
-countriestop10.set_index('index')
-
 fig3, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='index', y='Country', data=countriestop10, ax=ax)
+sns.barplot(x='index', y='Country', data=df_location, ax=ax)
 ax.set_title('Number of ratings by country') # 그래프 제목 설정
 
 # 그래프 표시하기
