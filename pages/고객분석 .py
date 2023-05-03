@@ -6,9 +6,19 @@ import plotly.express as px
 
 
 st.header('고객분석')
-with st.spinner("Loading..."):
-        time.sleep(5)
-    st.success("Done!")
+st.sidebar.title('고객분석')
+category = st.sidebar.selectbox(
+    'Select a category:',
+    ['Category 1', 'Category 2', 'Category 3']
+)
+
+# 선택한 카테고리에 따라 출력
+if category == 'Category 1':
+    st.write('You selected Category 1')
+elif category == 'Category 2':
+    st.write('You selected Category 2')
+elif category == 'Category 3':
+    st.write('You selected Category 3')
 
 st.write("""
 ### DATA 전처리
