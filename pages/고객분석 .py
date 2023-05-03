@@ -7,11 +7,11 @@ import plotly.express as px
 
 st.header('고객분석')
 st.sidebar.title('고객분석')
-st.sidebar.subheader("part 1. 나이별 분석")
 st.sidebar.markdown("""
     ## Table of Contents
-    - [Part 1. Age Analysis](#part-1-age-analysis)
-    - [Part 2. Gender Analysis](#part-2-gender-analysis)
+    - [part 1. 나이별 분석]
+    - [part 2. 지역별 분석]
+    - [part 3. 유저별 분석]
 """)
 st.sidebar.subheader("part 2. 지역별 분석")
 st.sidebar.subheader("part 3. 유저 분석 ")
