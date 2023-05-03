@@ -160,18 +160,6 @@ st.write('')
 js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
 
 st.markdown("<h3 id='part-3-user-analysi'>✅Part 3. 유저별 분석</h3>", unsafe_allow_html=True)
-st.write("""
-#### DATA 전처리
-
-- 예를들어 Harry Potter 단어가 포함된 단어를 찾으면 해당 정보를 아래와 같이 찾을 수 있음
-- 같은 책이라도 에디션에 따라 나뉘는 종류가 다르게 경우가 있다
-- 같은 저자라도 J.K Rowling, Joanne K,Rowling, Joanne K.Rowling과 같이 다른 방식으로 표기가 되어있는 경우가 있다
-""")
-
-st.write("""
-##### 도서별 이용횟수와 평균 평점
-도서의 정보 및 이용 횟수와 평균 평점 추가한 데이터셋 생성
-""")
 st.write('')
 st.write('')
 
