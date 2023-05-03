@@ -5,14 +5,14 @@ import numpy as np
 
 st.header('고객분석')
 with st.sidebar:
-    choose = option_menu("App Gallery", ["About", "Photo Editing", "Project Planning"],
-                         icons=['house', 'camera fill', 'kanban'],
+    choice = option_menu("Menu", ["페이지1", "페이지2", "페이지3"],
+                         icons=['house', 'kanban', 'bi bi-robot'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
-        "container": {"padding": "5!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#02ab21"},
+        "container": {"padding": "4!important", "background-color": "#fafafa"},
+        "icon": {"color": "black", "font-size": "25px"},
+        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#fafafa"},
+        "nav-link-selected": {"background-color": "#08c7b4"},
     }
     )
 st.write("""
