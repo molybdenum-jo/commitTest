@@ -70,4 +70,4 @@ uploaded_file = st.file_uploader("CSV 파일 업로드", type="csv")
 # 업로드된 파일을 DataFrame으로 변환
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    st.write(df)
+    st.dataframe(df)
