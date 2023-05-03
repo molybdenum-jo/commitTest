@@ -103,6 +103,23 @@ ax.set_title('Number of ratings by country') # 그래프 제목 설정
 # 그래프 표시하기
 st.pyplot(fig3)
 
+
+st.write("""
+##### 나라별 평균 평점 수(TOP10)
+나라별 도서평균평점을 가장 높게 준 나라는 순서대로 우간다이며 가봉 리투아니아 과테말라가 뒤를 잇는다.
+- UGA = 우간다
+- GAB = 가봉
+- LTU = 리투아니아
+- GTM = 과테말라
+- MUS = 모리셔스공화국
+- VNM = 베트남
+- BGD = 방글라데스
+- GNB = 기니비사우
+- AND = 안다우스
+- BRN = 브루나이
+
+
+""")
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
