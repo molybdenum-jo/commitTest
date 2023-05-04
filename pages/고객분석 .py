@@ -152,7 +152,7 @@ sns.barplot(x='Country', y='Rating-Per-Count', data=df_avg, ax=ax)
 ax.set_title('Average rating by country') # 그래프 제목 설정
 
 # 그래프 표시하기
-st.pyplot(fig3)
+st.pyplot(fig2)
 st.write('')
 st.write('')
 st.write('')
