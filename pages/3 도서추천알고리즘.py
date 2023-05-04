@@ -93,19 +93,30 @@ user_based_cf.fit(trainset)
 with open('model.pkl', 'wb') as f:
     pickle.dump(user_based_cf, f)
 
-    # 모델 불러오기
+from flask import Flask, request, jsonify
+import pickle
+
+app = Flask(__name__)
+
+# 모델 로드
 with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-    # 스트림릿에서 입력 데이터 받아오기
-user_id = request.form['User-ID']
-book_id = request.form['Book-ID']
+@app.route('/', methods=['POST'])
+def predict():
+    # 입력 데이터 받아오기
+    user_id = request.form['user_id']
+    book_id = request.form['book_id']
 
-# 입력 데이터를 모델의 입력으로 사용하여 예측 수행
-rating = model.predict(user_id, book_id)
+    # 입력 데이터를 모델의 입력으로 사용하여 예측 수행
+    rating = model.predict(user_id, book_id)
 
-# 예측 결과 반환
-return jsonify({'rating': rating})
+    # 예측 결과 반환
+    return jsonify({'rating': rating})
+
+if __name__ == '__main__':
+    app.run()
+
 
 
 js = "window.scrollTo(0, document.getElementById('part-2-recommend').offsetTop);"
