@@ -90,10 +90,8 @@ for _, row in val_data.iterrows():
     user_based_cf_preds.append(user_based_cf.predict(row['User-ID'], row['Book-ID']).est)
     
 # 샘플링된 데이터로 모델 학습
-model = KNNWithMeans(sim_options=sim_options)
-trainset = data.build_full_trainset()
-model.fit(trainset)
-
+user_based_cf = KNNWithMeans(sim_options=sim_options)
+user_based_cf.fit(trainset)
 # 학습된 모델 저장
 with open('model.pkl', 'wb') as f:
     pickle.dump(user_based_cf, f)
