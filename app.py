@@ -32,6 +32,7 @@ df = pd.DataFrame({
 st.dataframe(df)
 
 
+
 st.write(""" 
 ## Insight
 """)
