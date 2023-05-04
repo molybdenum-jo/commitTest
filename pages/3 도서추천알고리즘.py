@@ -82,7 +82,7 @@ data_mean = Dataset.load_from_df(user_item_rating_mean, reader)
 trainset = data_mean.build_full_trainset()
 
 # 사용자 기반 협업 필터링 (KNNWithMeans) 모델 구축
-user_based_cf = KNNWithMeans(k=40, sim_options={'name': 'pearson_baseline', 'user_based': True}, verbose=True)
+sim_options = {'name': 'pearson_baseline', 'user_based': False}
 
 # 사용자 기반 협업 필터링 예측
 user_based_cf_preds = []
@@ -90,7 +90,9 @@ for _, row in val_data.iterrows():
     user_based_cf_preds.append(user_based_cf.predict(row['User-ID'], row['Book-ID']).est)
     
 # 샘플링된 데이터로 모델 학습
-user_based_cf.fit(trainset)
+model = KNNWithMeans(sim_options=sim_options)
+trainset = data.build_full_trainset()
+model.fit(trainset)
 
 # 학습된 모델 저장
 with open('model.pkl', 'wb') as f:
