@@ -42,7 +42,7 @@ st.write("""
 import os
 import pickle
 
-train = pd.read_csv("Train (3).csv")
+train = pd.read_csv("data/TRAIN.csv")
 
 from sklearn.model_selection import train_test_split
 
