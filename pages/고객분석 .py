@@ -188,4 +188,4 @@ ax.set_title('Maximum number of ratings for top 10 users', fontsize=16)
 
 # 그래프 표시하기
 st.pyplot(fig1)
- 
+
