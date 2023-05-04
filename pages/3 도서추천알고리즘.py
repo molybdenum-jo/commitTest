@@ -42,6 +42,8 @@ st.write("""
 
 import os
 import pickle
+from surprise import KNNWithMeans, Dataset, Reader
+
 
 train = pd.read_csv("data/TRAIN.csv")
 
