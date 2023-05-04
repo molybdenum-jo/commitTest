@@ -5,43 +5,40 @@ import matplotlib as plt
 import plotly.express as px
 
 
-st.header('📖출판사분석')
+st.header('📖도서평점 예측을 통한 도서추천알고리즘')
 
 
 st.sidebar.markdown("""
-    ## 출판사 분석
-    - [part 1. 도서 분석](#part-1-book-analysis)
-    - [part 2. 작가 분석](#part-2-author-analysis)
-    - [part 3. 출판년도 분석](#part-3-year_publication-analysis)
-    - [part 4. 출판사 분석](#part-4-publisher-analysis)
+    ## 도서추천알고리즘 분석
+    - [part 1. 협업 필터링 기반의 추천시스템](#part-1-recommend)
+    - [part 2. 콘텐츠 기반 필터링 추천시스템](#part-2-recommend)
+    - [part 3. 행렬 인수분해 기반 추천시스템](#part-3-recommend)
+    - [part 4. 딥러닝 모델 기반 추천시스템](#part-4-recommend)
+    - [part 5. 앙상블 기법을 사용한 추천시스템](#part-5-recommend)
+    - [part 6. 하이퍼파라미터 최적화를 통한 추천시스템](#part-6-recommend)
 """)
 st.write('')
 st.write("""
-- 출판사나 도서 기업의 입장에서 도서 평점을 활용한 분석이다. 출판사/도서기업이 가지고 있는 고객 데이터와 평점 등을 통해 출판사/도서기업의 데이터가 고객의 평점에 어떠한 영향을 미치는지를 분석하여 고객의 선호도를 분석한다.
+- 도서 평점 예측을 통한 도서 추천 알고리즘은 사용자가 선호하는 도서를 추천하는 데 도움을 줄 수 있습니다. 이 알고리즘은 사용자의 평가 이력을 기반으로 작동하며, 이를 사용하여 사용자가 어떤 책을 좋아할지 예측합니다..
 
 """)
 st.write('')
 st.write('')
 
 
-js = "window.scrollTo(0, document.getElementById('part-1-age-analysis').offsetTop);"
+js = "window.scrollTo(0, document.getElementById('part-1-recommend').offsetTop);"
 
     
-st.markdown("<h3 id='part-1-age-analysis'>✅Part 1. 도서 분석</h3>", unsafe_allow_html=True)
+st.markdown("<h3 id='part-1-recommend'>✅Part 1. 협업 필터링 기반의 추천시스템</h3>", unsafe_allow_html=True)
 
 st.write('')
 st.write('')
 st.write("""
 
-- 예를들어 Harry Potter 단어가 포함된 단어를 찾으면 해당 정보를 아래와 같이 찾을 수 있음
-- 같은 책이라도 에디션에 따라 나뉘는 종류가 다르게 경우가 있다
+- 사용자 기반 협업 필터링 및 아이템 기반 협업 필터링 모델을 구현하고, 이들 모델의 평점 예측 성능을 평가한다. RMSE 값으로 성능을 비교하여 어떤 협업 필터링 방법이 더 나은 성능을 보이는지 결정한다.
 """)
 
-st.write("""
-##### ✔ 상위 10위 도서별 평점수
-- Wild Animus 책이 21번으로 가장 많은 평점이 달렸습니다.
-- 그 뒤로 Where the Heart Is (Oprah's Book Club (Paperback)), The Da Vinci Code, The Red Tent (Bestselling Backlist) 등이 다음 평점 수를 기록했다.
-""")
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -63,74 +60,24 @@ ax.set_title('Top10 Books most read by users', fontsize=16)
 # 그래프 표시하기
 st.pyplot(fig1)
 
-st.write("""
-##### ✔ 상위 10위 도서별 평균 평점
-- The Vampire Lestat (Vampire Chronicles, Book II)이 8.6점으로 가장 높은 평점을 보인다.
-- 그 뒤로 The Secret Life of Bees, A Painted House, We Were the Mulvaneys 등이 7점이상의 높은 평점을 보였다.
-""")
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# 데이터 불러오기
-
-df_avg = pd.read_csv('data/goodratingbooks.csv')
-
-fig3, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='avg_rating', y='Book-Title', data=df_avg,palette='Set1')
-
-# x축 레이블 90도 회전
-ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
-
-# 그래프 제목 추가
-ax.set_title('Top10 Books most read by users', fontsize=16)
-
-# 그래프 표시하기
-st.pyplot(fig3)
-
-st.write('')
-st.write('')
-js = "window.scrollTo(0, document.getElementById('part-2-location-analysis').offsetTop);"
+js = "window.scrollTo(0, document.getElementById('part-2-recommend').offsetTop);"
   
-st.markdown("<h3 id='part-2-author-analysis'>✅Part 2. 작가 분석</h3>", unsafe_allow_html=True)
-
-st.write("""
-
-- 같은 저자라도 J.K Rowling, Joanne K,Rowling, Joanne K.Rowling과 같이 다른 방식으로 표기가 되어있는 경우가 있다
-""")
-
-st.write("""
-##### ✔ 상위10위 작가별 평균 평점
-
-""")
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# 데이터 불러오기
-
-df_author = pd.read_csv('data/goodratingbooks.csv')
-
-fig2, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='avg_rating', y='Book-Author', data=df_author,palette='Set1')
-
-# x축 레이블 90도 회전
-ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
-
-# 그래프 제목 추가
-ax.set_title('Top 10 Book of rating by author', fontsize=16)
-
-# 그래프 표시하기
-st.pyplot(fig2)
+st.markdown("<h3 id='part-2-recommend'>✅Part 2. 콘텐츠 기반 필터링 추천시스템</h3>", unsafe_allow_html=True)
 
 
-js = "window.scrollTo(0, document.getElementById('part-3-user-analysis').offsetTop);"
+js = "window.scrollTo(0, document.getElementById('part-3-recommend').offsetTop);"
 
-st.markdown("<h3 id='part-3-year_publication-analysi'>✅Part 3. 출판년도 분석</h3>", unsafe_allow_html=True)
+st.markdown("<h3 id='part-3-recommend'>✅Part 3. 행렬 인수분해 기반 추천시스템</h3>", unsafe_allow_html=True)
 
-js = "window.scrollTo(0, document.getElementById('part-4-publisher-analysis').offsetTop);"
+js = "window.scrollTo(0, document.getElementById('part-4-recommend').offsetTop);"
 
-st.markdown("<h3 id='part-3-year_publication-analysi'>✅Part 4. 출판사 분석</h3>", unsafe_allow_html=True)
+st.markdown("<h3 id='part-4-recommend'>✅Part 4. 딥러닝 모델 기반 추천시스템</h3>", unsafe_allow_html=True)
+
+js = "window.scrollTo(0, document.getElementById('part-5-recommend').offsetTop);"
+
+st.markdown("<h3 id='part-5-recommend'>✅Part 5. 앙상블 기법을 사용한 추천시스템</h3>", unsafe_allow_html=True)
+
+js = "window.scrollTo(0, document.getElementById('part-6-recommend').offsetTop);"
+
+st.markdown("<h3 id='part-6-recommend'>✅Part 6. 하이퍼파라미터 최적화를 통한 추천시스템</h3>", unsafe_allow_html=True)
  
