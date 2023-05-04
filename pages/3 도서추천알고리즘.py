@@ -39,26 +39,12 @@ st.write("""
 """)
 
 
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+import os
+import pickle
 
-# 데이터 불러오기
-
-df_book = pd.read_csv('data/popbooks.csv')
-
-fig1, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(x='N_ratings', y='Book-Title', data=df_book,palette='Set1')
-
-# x축 레이블 90도 회전
-ax.set_xticklabels(ax.get_xticklabels(), rotation=50)
-
-# 그래프 제목 추가
-ax.set_title('Top10 Books most read by users', fontsize=16)
-
-# 그래프 표시하기
-st.pyplot(fig1)
+# 모델 불러오기
+with open(user_knn, 'rb') as f:
+    model = pickle.load(f)
 
 js = "window.scrollTo(0, document.getElementById('part-2-recommend').offsetTop);"
   
