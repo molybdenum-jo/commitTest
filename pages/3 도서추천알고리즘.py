@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib as plt
 import plotly.express as px
+from surprise import Dataset, Reader
 
 
 st.header('📖도서평점 예측을 통한 도서추천알고리즘')
