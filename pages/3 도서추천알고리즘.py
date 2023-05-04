@@ -85,13 +85,14 @@ trainset = data_mean.build_full_trainset()
 sim_options = {'name': 'pearson_baseline', 'user_based': False}
 user_based_cf = KNNWithMeans(sim_options=sim_options)
 
+# 샘플링된 데이터로 모델 학습
+user_based_cf.fit(trainset)
+
 # 사용자 기반 협업 필터링 예측
 user_based_cf_preds = []
 for _, row in val_data.iterrows():
     user_based_cf_preds.append(user_based_cf.predict(row['User-ID'], row['Book-ID']).est)
     
-# 샘플링된 데이터로 모델 학습
-user_based_cf.fit(trainset)
 
 # 학습된 모델 저장
 with open('model.pkl', 'wb') as f:
