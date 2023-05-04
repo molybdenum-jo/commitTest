@@ -83,15 +83,16 @@ trainset = data_mean.build_full_trainset()
 
 # 사용자 기반 협업 필터링 (KNNWithMeans) 모델 구축
 sim_options = {'name': 'pearson_baseline', 'user_based': False}
+user_based_cf = KNNWithMeans(sim_options=sim_options)
 
 # 사용자 기반 협업 필터링 예측
 user_based_cf_preds = []
 for _, row in val_data.iterrows():
-    user_based_cf_preds.append(user_based_cf_preds.predict(row['User-ID'], row['Book-ID']).est)
+    user_based_cf_preds.append(user_based_cf.predict(row['User-ID'], row['Book-ID']).est)
     
 # 샘플링된 데이터로 모델 학습
-user_based_cf_preds = KNNWithMeans(sim_options=sim_options)
-user_based_cf_preds.fit(trainset)
+user_based_cf.fit(trainset)
+
 # 학습된 모델 저장
 with open('model.pkl', 'wb') as f:
     pickle.dump(user_based_cf_preds, f)
