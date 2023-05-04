@@ -94,7 +94,7 @@ user_based_cf_preds = KNNWithMeans(sim_options=sim_options)
 user_based_cf_preds.fit(trainset)
 # 학습된 모델 저장
 with open('model.pkl', 'wb') as f:
-    pickle.dump(user_based_cf, f)
+    pickle.dump(user_based_cf_preds, f)
 
 from flask import Flask, request, jsonify
 import pickle
